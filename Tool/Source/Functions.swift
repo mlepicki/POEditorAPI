@@ -29,6 +29,9 @@ func xCodeLocaleFromPOEditorCode(code: String) -> String
 /// The corrected strings file name to write output to
 func stringsFileName(for context: String) -> String?
 {
+	if context == "" {
+		return "Localizable.strings"
+	}
 	let fileExt = (context as NSString).pathExtension
 	let name = ((context as NSString).lastPathComponent as NSString).deletingPathExtension
 	
